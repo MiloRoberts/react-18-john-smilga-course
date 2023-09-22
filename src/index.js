@@ -17,35 +17,27 @@ const books = [
 ];
 
 const BookList = () => {
+    const getBook = (id) => {
+        const book = books.find((book) => { return book.id === id; });
+        console.log(book);
+    };
     return (
         <section className="booklist">
-            <EventExamples />
             {books.map((book) => {
-                return <Book {...book} key={book.id} />;
+                return <Book {...book} key={book.id} getBook={getBook} />;
             })}
         </section>
     );
 };
 
-const EventExamples = () => {
-    return <section>
-        <form>
-            <h2>Typical Form</h2>
-            <input type="text" name="product" onChange={(event) => { console.log(event.target.value); }} style={{ margin: '1rem 0' }} />
-            <button type="submit">submit</button>
-            <div>
-                <button onClick={() => { console.log('click me'); }} type="button">click me</button>
-            </div>
-        </form>
-    </section>;
-};
-
 const Book = (props) => {
-    const { img, title, author } = props;
+    const { img, title, author, id, getBook } = props;
     // console.log(props);
+    // const getSingleBook = () => { getBook(id); };
     return <article className="book">
         <img src={img} alt={title} />
         <h2>{title}</h2>
+        <button onClick={() => { getBook(id); }}>click me</button>
         <h4>{author}</h4>
     </article>;
 };

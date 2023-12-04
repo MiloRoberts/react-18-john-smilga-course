@@ -1,4 +1,4 @@
-import Starter from './components/01-error-example';
+import Starter from './components/03-useState-array';
 function App() {
   return (
     <div className='container'>

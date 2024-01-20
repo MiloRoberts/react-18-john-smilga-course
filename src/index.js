@@ -1,31 +1,34 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-
 import './index.css';
+
+const firstBook = {
+  author: 'James Clear',
+  title: 'Atomic Habits',
+  img: 'https://images-na.ssl-images-amazon.com/images/I/81YkqyaFVEL._AC_UL600_SR600,400_.jpg'
+};
+
+const secondBook = {
+  author: 'Megan Logan',
+  title: 'Self-Love Workbood for Women',
+  img: 'https://images-na.ssl-images-amazon.com/images/I/71o9iq2ZwDL._AC_UL600_SR600,400_.jpg'
+};
 
 const Booklist = () => {
   return (
     <section className="booklist">
-      <Book />
-      <Book />
-      <Book />
-      <Book />
+      <Book author={firstBook.author} title={firstBook.title} img={firstBook.img} />
+      <Book author={secondBook.author} title={secondBook.title} img={secondBook.img} />
     </section>
   );
 };
 
-const Book = () => {
+const Book = ({ img, title, author }) => {
   return <article className="book">
-    <Image />
-    <Title />
-    <Author />
+    <img src={img} alt={title} />
+    <h2>{title}</h2>
+    <h4>{author}</h4>
   </article>;
-};
-
-const Image = () => <img src="https://images-na.ssl-images-amazon.com/images/I/81YkqyaFVEL._AC_UL600_SR600,400_.jpg" alt="" />;
-const Title = () => <h2>Atomic Habits</h2>;
-const Author = () => {
-  return <h4>James Clear</h4>;
 };
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

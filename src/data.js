@@ -1,23 +1,32 @@
-export const data = [
-  { id: 1, name: 'john' },
-  { id: 2, name: 'peter' },
-  { id: 3, name: 'susan' },
-  { id: 4, name: 'anna' },
-];
-
-export const people = [
-  { id: 1, name: 'bob', nickName: 'Stud Muffin' },
-  { id: 2, name: 'peter' },
+export default [
+  {
+    id: 1,
+    name: 'Bertie Yates',
+    age: 29,
+    image: 'https://www.course-api.com/images/people/person-1.jpeg',
+  },
+  {
+    id: 2,
+    name: 'Hester Hogan',
+    age: 32,
+    image: 'https://www.course-api.com/images/people/person-2.jpeg',
+  },
   {
     id: 3,
-    name: 'oliver',
-    images: [
-      {
-        small: {
-          url: 'https://res.cloudinary.com/diqqf3eq2/image/upload/ar_1:1,bo_5px_solid_rgb:ff0000,c_fill,g_auto,r_max,w_1000/v1595959121/person-1_aufeoq.jpg',
-        },
-      },
-    ],
+    name: 'Larry Little',
+    age: 36,
+    image: 'https://www.course-api.com/images/people/person-3.jpeg',
   },
-  { id: 4, name: 'david' },
+  {
+    id: 4,
+    name: 'Sean Walsh',
+    age: 34,
+    image: 'https://www.course-api.com/images/people/person-4.jpeg',
+  },
+  {
+    id: 5,
+    name: 'Lola Gardner',
+    age: 29,
+    image: 'https://www.course-api.com/images/people/person-5.jpeg',
+  },
 ];

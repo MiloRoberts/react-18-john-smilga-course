@@ -1,11 +1,23 @@
-import Starter from './starter/05-useState-gotcha.jsx';
+import data from './data.js';
+import Person from './assets/Person.jsx';
+import { useState } from 'react';
 
-function App() {
+const App = () => {
+  const [people, setPeople] = useState(data);
+
+  const clearPeople = () => {
+    setPeople([]);
+  };
+
   return (
-    <div className='container'>
-      <Starter />
-    </div>
+    <>
+      <button className='btn' onClick={clearPeople}>Clear All</button>
+      {people.map(({ id, name, age, image }) => {
+        return (
+          <Person key={id} name={name} age={age} image={image} />
+        );
+      })}
+    </>
   );
-}
-
+};
 export default App;

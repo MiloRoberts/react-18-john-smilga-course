@@ -1,23 +1,10 @@
-import data from './data.js';
-import Person from './assets/Person.jsx';
-import { useState } from 'react';
+import Starter from './starter/04-fetch-data.jsx';
 
 const App = () => {
-  const [people, setPeople] = useState(data);
-
-  const clearPeople = () => {
-    setPeople([]);
-  };
-
   return (
-    <>
-      <button className='btn' onClick={clearPeople}>Clear All</button>
-      {people.map(({ id, name, age, image }) => {
-        return (
-          <Person key={id} name={name} age={age} image={image} />
-        );
-      })}
-    </>
+    <div className='container'>
+      <Starter />
+    </div>
   );
 };
 export default App;

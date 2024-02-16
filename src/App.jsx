@@ -1,4 +1,4 @@
-import Starter from './starter/04-fetch-data.jsx';
+import Starter from './starter/02-multiple-returns-fetch-data';
 
 const App = () => {
   return (

@@ -1,4 +1,4 @@
-import Starter from './starter/02-multiple-returns-fetch-data';
+import Starter from './starter/05-short-circuit-examples';
 
 const App = () => {
   return (

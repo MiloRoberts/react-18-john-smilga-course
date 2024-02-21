@@ -7,23 +7,24 @@ const MultipleReturnsFetchData = () => {
 
   const [user, setUser] = useState(null);
 
-  useEffect(() => {
-    const fetchUser = async () => {
-      try {
-        const response = await fetch(url);
-        if (!response.ok) {
-          setIsError(true);
-          setIsLoading(false);
-          return;
-        }
-        const data = await response.json();
-        setUser(data);
-      } catch (error) {
+  const fetchUser = async () => {
+    try {
+      const response = await fetch(url);
+      if (!response.ok) {
         setIsError(true);
-        console.log(error);
+        setIsLoading(false);
+        return;
       }
-      setIsLoading(false);
-    };
+      const data = await response.json();
+      setUser(data);
+    } catch (error) {
+      setIsError(true);
+      console.log(error);
+    }
+    setIsLoading(false);
+  };
+
+  useEffect(() => {
     fetchUser();
   }, []);
 
@@ -33,11 +34,13 @@ const MultipleReturnsFetchData = () => {
   if (isError) {
     return <h2>There was an error.</h2>;
   }
+  const { avatar_url, name, company, bio } = user;
+
   return <div>
-    <img src={user.avatar_url} alt={user.name} style={{ width: '150px', borderRadius: '25px' }} />
-    <h2>{user.name}</h2>
-    <h4>works at {user.company}</h4>
-    <p>{user.bio}</p>
+    <img src={avatar_url} alt={name} style={{ width: '150px', borderRadius: '25px' }} />
+    <h2>{name}</h2>
+    <h4>works at {company}</h4>
+    <p>{bio}</p>
   </div>;
 };
 export default MultipleReturnsFetchData;

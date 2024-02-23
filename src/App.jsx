@@ -1,6 +1,7 @@
-import Starter from './starter/05-short-circuit-examples';
+import Starter from './starter/07-user-challenge';
 
 const App = () => {
+
   return (
     <div className='container'>
       <Starter />
